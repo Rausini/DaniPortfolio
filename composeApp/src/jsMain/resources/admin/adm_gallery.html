@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Stitch Design</title>
+    <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                primary: "#1717cf",
+                "background-light": "#f6f6f8",
+                "background-dark": "#111121",
+              },
+              fontFamily: {
+                display: ["Space Grotesk"],
+              },
+              borderRadius: {
+                DEFAULT: "0.25rem",
+                lg: "0.5rem",
+                xl: "0.75rem",
+                full: "9999px",
+              },
+            },
+          },
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex min-h-screen">
+    <aside class="flex flex-col w-64 bg-background-light dark:bg-background-dark border-r border-gray-200/10 dark:border-gray-800/10">
+        <div class="p-6">
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white">Painel de Controle</h1>
+            <p class="text-sm text-gray-500 dark:text-gray-400">Artista: Danielle Paes</p>
+        </div>
+        <nav class="flex-1 px-4">
+            <a class="flex items-center gap-3 px-4 py-2 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary" href="#">
+                <span class="material-symbols-outlined">photo_library</span>
+                <span class="font-medium">Gerenciamento de Imagens</span>
+            </a>
+            <a class="flex items-center gap-3 px-4 py-2 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-primary/5 dark:hover:bg-primary/10" href="#">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="font-medium">Configurações</span>
+            </a>
+        </nav>
+        <div class="p-4 w-64">
+            <button id="logoutBtn"
+                    class="flex items-center justify-center gap-3 px-4 py-2 w-full bg-red-600 text-white rounded-lg font-medium opacity-100 group-hover:opacity-100 transition-opacity duration-300 delay-150 shadow-lg hover:bg-red-700">
+                <span class="material-symbols-outlined">logout</span>
+                <span>Sair</span>
+            </button>
+        </div>
+    </aside>
+    <main class="flex-1 p-8">
+        <div class="flex justify-between items-start mb-8">
+            <div>
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Galeria de Imagens</h2>
+                <p class="text-gray-500 dark:text-gray-400">Visão geral das imagens atuais na galeria</p>
+            </div>
+            <button id="addImagesBtn" class="flex items-center justify-center gap-2 h-10 px-5 bg-primary text-white rounded-lg font-medium shadow-lg hover:bg-primary/90 transition-colors">
+                <span class="material-symbols-outlined">add_photo_alternate</span>
+                <span>Adicionar Novas Imagens</span>
+            </button>
+        </div>
+        <div class="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-6">
+            <div class="relative group overflow-hidden rounded-lg">
+                <img alt="Artwork 1" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF35bNqPyGIyoLg9np3nfa1vStQFRNj3AJ3doL89RQQjEhlpvOwhxe_1hlmBDKUiI2JLAImC436JoGaaOfAW8rm0nUctlvW3r6ZDObs4yhVUjq9wfo3GPoEJJSy8f54MoUcAhlulIVdADKrEJAx5s16AKU4DkCRw2CjWDqWVitRTv3AqpnFgAFfRHWVkoVvW5rViNJuaUExyMmD2OeYRk8K19mWoy0cydqJINkcwRvMc-805cw1Zj9qK1f8641MNHlhUvWAS7QYXk"/>
+            </div>
+            <div class="relative group overflow-hidden rounded-lg">
+                <img alt="Artwork 2" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGM0fMIyU0YxWjWKDY1Nt8KFehak-F3KoZ4jkad2To-AQPFsbG9W_EaOF4Dd6z7UW7gXNYC4UiyPogx0ed71Of8dYlf0bhElbkB_kotV18jSeQU1d5zbcET_qf1Dp-mmIsrSKe-F0mj715STyHU4H8pUlK2C-GxmGc2Xx6tV37ikyG7qbdk_DJPVw2xwYWMFrGJ1kwRzRlTbDD8yjWezXRSnHLUgZDzNPO2RJe3VGnaYtZbDJ3cGvuodcEm3mxZ5At48Y2h5S0tKU"/>
+            </div>
+            <div class="relative group overflow-hidden rounded-lg">
+                <img alt="Artwork 3" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYdBFgDf7_VfggoXtl34bHBO42fUT7FeB9A5od6qGqLxQElbQuEt_KgPDL2olHXd9fVk-yekJyVKG1qXgSbDFwpD9I6OZU_XITiqpoNgnJkPQ6vXdCtOgAaQI0cDYv_r-OW_sXA67xgSq15sJEHLA1D46aGcNwI8NUzf-Iu3uFVuNlN29mzFtc5yAorKepK7DJptnkc_m-usovhk9gwGcvgKqnSxFvsrc6BttiTbTd7vGoFeTbyTCfrHQT8zA_cZrkBWO2iwmIIOs"/>
+            </div>
+            <div class="relative group overflow-hidden rounded-lg">
+                <img alt="Artwork 4" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuCoV-tCOvNgXEGS54eTEJ2hcTXocjYxvfYc_h-ZIUr_HAP6cqDeDTkSVSP7_QN1I79IhEbhVBrmLmdH2hfnKodDgDnNStxvMO17uze6cOpbKignbczkD5pVhEX3P-pSQfxlufY9LF35rSJRQmlDq1pvOJ1XhV0PcnXmdTVdZcZusKZ1rhSnmLLZ0Kl0PIJW2GFjxZaBKO4LzRLo7hgHL8oniSbjvWQlE_zNemYfjgDIpOM2yZ6Pls0xvhAevrc-sjg8ivRKmAHc0"/>
+            </div>
+            <div class="relative group overflow-hidden rounded-lg">
+                <img alt="Artwork 5" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcpTxK_ETWMBGA4WpEBwrO7kCgQ2ZCyrxM1v99FbFOWVhAdOQ2vI7UZsEUZswR4XjjvPanvS-G2aDuldiBpUM5yi3Bwd7EIvCFAhpOqKR6YYQ1W7pddnzKRxR__tqI1h6jtelzqRE0gvfoZxFmRvKusvyQiYGL-J7KSPgi1Xjg1l_Vhd-epuTaYgdsYD9bQ18PLTZXYDbZO-lHq93pYzMXq_Uv1fdliyn5RZXU60tAa5Fj_nAcg_BrGtxh41covpiGWJemz9h0WBE"/>
+            </div>
+            <div class="relative group overflow-hidden rounded-lg">
+                <img alt="Artwork 6" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr1lsChcL1Y3w9Js1hGFuFki7tTWKv5bSVtaWmILPYHxI9SwN_Btrr1-bjQ1P2NNIZOaVghcABTlG_OUM0zaaz2RU5hy2QeUVNqgRuKkcmiLTQwi1LBee0skgG-An5oG2d0CKqAwJE4PGWp-BsrxbVIHFxBzm1HzvKIN1ajuxZFX_qNvX-XHWJWyVMj1FSNesNIoyi59RO4xQG56htdeohltQQvni45xQQQ0VcGu43B5k6Y-MtPb4F819QhPvnycNI4cOvEtJS2Sc"/>
+            </div>
+        </div>
+        <div class="mt-8 text-right text-gray-500 dark:text-gray-400">
+            <p>Total de imagens: <span class="font-bold text-gray-700 dark:text-gray-200">6</span></p>
+        </div>
+    </main>
+</div>
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script>
+    // ====== COLOQUE SEUS VALORES ======
+    const SUPABASE_URL = "https://teiqgonxzpanpjdzxteb.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlaXFnb254enBhbnBqZHp4dGViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzMzY3MzgsImV4cCI6MjA3NTkxMjczOH0.h2fW3ZCPuEy0O4q1e-B0L8pvKpDnUNSR9uNeSzuWji0";
+    // ===================================
+
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    (async () => {
+      const { data: { user } } = await sb.auth.getUser();
+      if (!user) {
+        // use caminho relativo para evitar problemas de subpasta em dev
+        window.location.replace("./"); // volta para /admin/index.html
+        return;
+      }
+      // daqui pra frente, página carregada normalmente (renderPanel, etc.)
+    })();
+
+    // se tiver botão "Sair"
+    document.addEventListener("DOMContentLoaded", () => {
+      const btn = document.getElementById("logoutBtn");
+      if (btn) btn.addEventListener("click", async () => {
+        await sb.auth.signOut();
+        window.location.replace("./");
+      });
+    });
+
+  const BUCKET = 'gallery';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const addBtn = document.getElementById('addImagesBtn'); // prefira ID
+    if (!addBtn) return;
+
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*';
+    fileInput.multiple = true;
+    fileInput.style.display = 'none';
+    document.body.appendChild(fileInput);
+
+    addBtn.addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', () => {
+      if (!fileInput.files?.length) return;
+      uploadImages(fileInput.files).catch(err => {
+        console.error(err);
+        alert('Falha no upload. Veja o console.');
+      }).finally(() => {
+        fileInput.value = '';
+      });
+    });
+  });
+
+  async function uploadImages(fileList) {
+    const files = Array.from(fileList);
+
+    // validação
+    const maxMB = 20;
+    for (const f of files) {
+      if (!f.type.startsWith('image/')) { alert(`Arquivo inválido: ${f.name}`); return; }
+      if (f.size > maxMB * 1024 * 1024) { alert(`"${f.name}" excede ${maxMB}MB.`); return; }
+    }
+
+    const { data: { user } } = await sb.auth.getUser();
+    if (!user) { window.location.replace('./'); return; }
+
+    const results = { ok: 0, fail: [] };
+
+    for (const file of files) {
+      const orig = file.name;
+      const dot = orig.lastIndexOf('.');
+      const base = dot > -1 ? orig.slice(0, dot) : orig;
+      const ext  = (dot > -1 ? orig.slice(dot + 1) : 'jpg').toLowerCase();
+      const safeBase = base.replace(/[^\w.-]+/g, '_').slice(0, 80);
+
+      const makePath = () => {
+        const uid = (crypto.randomUUID && crypto.randomUUID()) || Math.random().toString(36).slice(2);
+        return `uploads/${Date.now()}-${uid}-${safeBase}.${ext}`;
+      };
+
+      let path = makePath();
+
+      // 1) upload com retry se 409
+      let upErr, attempt = 0;
+      do {
+        const res = await sb.storage.from(BUCKET).upload(path, file, {
+          cacheControl: '3600',
+          upsert: false,
+          contentType: file.type || 'image/*'
+        });
+        upErr = res.error;
+        if (upErr && (upErr.statusCode === 409 || upErr.statusCode === '409' || /exists|already/i.test(upErr.message || ''))) {
+          path = makePath();
+        } else {
+          break;
+        }
+      } while (++attempt < 2);
+
+      if (upErr) {
+        console.error('Upload error', orig, upErr);
+        results.fail.push({ name: orig, reason: upErr.message || String(upErr) });
+        continue;
+      }
+
+      // 2) URL pública
+      const { data: pub } = sb.storage.from(BUCKET).getPublicUrl(path);
+      const publicUrl = pub.publicUrl;
+
+      // 3) insert no DB
+      const { error: insErr } = await sb.from('images').insert({
+        url: publicUrl,
+        storage_path: path,
+        title: orig,
+        order: Math.floor(Date.now() / 1000),
+        published: true
+      });
+      if (insErr) {
+        console.error('DB insert error', orig, insErr);
+        results.fail.push({ name: orig, reason: insErr.message || String(insErr) });
+        // opcional: rollback no storage
+        await sb.storage.from(BUCKET).remove([path]).catch(() => {});
+        continue;
+      }
+
+      results.ok += 1;
+    }
+
+    if (results.fail.length === 0) {
+      alert('Uploads concluídos!');
+    } else {
+      const msg = [
+        `Uploads concluídos com avisos.`,
+        `Sucesso: ${results.ok}`,
+        `Falhas: ${results.fail.length}`,
+        '',
+        ...results.fail.map(f => `- ${f.name}: ${f.reason}`)
+      ].join('\n');
+      alert(msg);
+    }
+
+    window.location.reload();
+  }
+
+  async function deleteImage(id) {
+    const { data: rec, error: selErr } = await sb.from('images').select('storage_path').eq('id', id).single();
+    if (selErr) { alert('Erro ao buscar registro.'); return; }
+
+    if (rec?.storage_path) {
+      await sb.storage.from(BUCKET).remove([rec.storage_path]).catch(() => {});
+    }
+
+    const { error: delErr } = await sb.from('images').delete().eq('id', id);
+    if (delErr) { alert('Erro ao excluir do DB.'); return; }
+
+    window.location.reload();
+  }
+</script>
+</body>
+</html>

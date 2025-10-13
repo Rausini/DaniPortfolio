@@ -1,18 +1,14 @@
-import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
-
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 kotlin {
-    // Opcional – mantém suporte a JS (além do Wasm)
     js(IR) {
         browser {
-            commonWebpackConfig {
-                outputFileName = "app.js"
-            }
+            commonWebpackConfig { outputFileName = "app.js" }
         }
         binaries.executable()
     }
@@ -21,9 +17,10 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(compose.runtime)
+                implementation(libs.kotlinx.serialization.json)
+                implementation(libs.kotlinx.coroutines.core)
             }
         }
-        // Se habilitou js(IR) acima, mantenha também:
         val jsMain by getting {
             dependencies {
                 implementation(compose.runtime)
@@ -33,3 +30,4 @@ kotlin {
         }
     }
 }
+

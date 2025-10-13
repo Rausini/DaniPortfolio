@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dan5is Admin - Login</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                primary: "#1717cf",
+                "background-light": "#f6f6f8",
+                "background-dark": "#111121",
+              },
+              fontFamily: { display: ["Manrope"] },
+              borderRadius: {
+                DEFAULT: "0.25rem",
+                lg: "0.5rem",
+                xl: "0.75rem",
+                full: "9999px"
+              },
+            },
+          },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md p-8 space-y-8 bg-background-light dark:bg-background-dark rounded-xl shadow-2xl">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-gray-800 dark:text-white">Admin Login</h1>
+            <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Access your artist dashboard</p>
+        </div>
+
+        <!-- ADICIONADO id="loginForm" -->
+        <form id="loginForm" class="space-y-6">
+            <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="username">Username</label>
+                <input id="username" name="username" type="text"
+                       placeholder="Enter your username"
+                       class="form-input w-full px-4 py-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 focus:ring-primary focus:border-primary text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"/>
+            </div>
+
+            <div class="space-y-2">
+                <label class="block text-sm font-medium text-gray-700 dark:text-gray-300" for="password">Password</label>
+                <input id="password" name="password" type="password"
+                       placeholder="Enter your password"
+                       class="form-input w-full px-4 py-3 rounded-lg bg-background-light dark:bg-background-dark border border-gray-300 dark:border-gray-700 focus:ring-primary focus:border-primary text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"/>
+            </div>
+
+            <div>
+                <button type="submit"
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+<script>
+    // ====== COLOQUE SEUS VALORES ======
+    const SUPABASE_URL = "https://teiqgonxzpanpjdzxteb.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlaXFnb254enBhbnBqZHp4dGViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzMzY3MzgsImV4cCI6MjA3NTkxMjczOH0.h2fW3ZCPuEy0O4q1e-B0L8pvKpDnUNSR9uNeSzuWji0";
+    // ===================================
+
+    const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // Se já estiver logado, manda para o painel
+    document.addEventListener("DOMContentLoaded", async () => {
+      const { data: { user } } = await sb.auth.getUser();
+      if (user) {
+        window.location.replace("./adm_gallery.html");
+        return;
+      }
+
+      const form = document.getElementById("loginForm");
+      if (!form) return;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        // use o campo "username" como EMAIL
+        const email = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+
+        const { error } = await sb.auth.signInWithPassword({ email, password });
+        if (error) {
+          alert("Login falhou: " + error.message);
+          return;
+        }
+        window.location.replace("./adm_gallery.html");
+      });
+    });
+</script>
+</body>
+</html>

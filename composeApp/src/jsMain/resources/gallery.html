@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Galeria Completa — Urban Canvas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: { primary: "#1717cf", "background-light": "#f6f6f8", "background-dark": "#111121" },
+              fontFamily: { display: ["Space Grotesk"] },
+            }
+          }
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-primary/20 bg-background-light/80 backdrop-blur-sm dark:bg-background-dark/80">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+        <a href="index.html#galeria" class="text-sm font-medium text-primary hover:underline">← Voltar</a>
+        <h1 class="text-lg font-bold text-gray-900 dark:text-white">Galeria Completa</h1>
+        <span class="w-12"></span>
+    </div>
+</header>
+
+<main class="mx-auto max-w-5xl px-4 pt-24 pb-10">
+    <section class="py-2">
+        <h2 class="pb-6 text-3xl font-bold">Galeria</h2>
+        <!-- Compose monta aqui; data-full=true => mostra TODAS -->
+        <div id="galeria-root" data-full="true"></div>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
