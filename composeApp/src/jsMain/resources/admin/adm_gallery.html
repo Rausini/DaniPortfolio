@@ -2,7 +2,7 @@
 <html class="dark" lang="en"><head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Stitch Design</title>
+    <title>Painel Administrativo</title>
     <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -69,187 +69,293 @@
                 <span>Adicionar Novas Imagens</span>
             </button>
         </div>
-        <div class="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-6">
-            <div class="relative group overflow-hidden rounded-lg">
-                <img alt="Artwork 1" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF35bNqPyGIyoLg9np3nfa1vStQFRNj3AJ3doL89RQQjEhlpvOwhxe_1hlmBDKUiI2JLAImC436JoGaaOfAW8rm0nUctlvW3r6ZDObs4yhVUjq9wfo3GPoEJJSy8f54MoUcAhlulIVdADKrEJAx5s16AKU4DkCRw2CjWDqWVitRTv3AqpnFgAFfRHWVkoVvW5rViNJuaUExyMmD2OeYRk8K19mWoy0cydqJINkcwRvMc-805cw1Zj9qK1f8641MNHlhUvWAS7QYXk"/>
+
+        <!-- Grid dinâmico -->
+        <div id="galleryGrid" class="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-6"></div>
+
+        <!-- Paginação (opcional) -->
+        <div class="mt-6 flex items-center justify-between">
+            <button id="prevPage" class="px-3 py-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 disabled:opacity-40">Anterior</button>
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                Página <span id="pageNum" class="font-semibold">1</span>
             </div>
-            <div class="relative group overflow-hidden rounded-lg">
-                <img alt="Artwork 2" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGM0fMIyU0YxWjWKDY1Nt8KFehak-F3KoZ4jkad2To-AQPFsbG9W_EaOF4Dd6z7UW7gXNYC4UiyPogx0ed71Of8dYlf0bhElbkB_kotV18jSeQU1d5zbcET_qf1Dp-mmIsrSKe-F0mj715STyHU4H8pUlK2C-GxmGc2Xx6tV37ikyG7qbdk_DJPVw2xwYWMFrGJ1kwRzRlTbDD8yjWezXRSnHLUgZDzNPO2RJe3VGnaYtZbDJ3cGvuodcEm3mxZ5At48Y2h5S0tKU"/>
-            </div>
-            <div class="relative group overflow-hidden rounded-lg">
-                <img alt="Artwork 3" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYdBFgDf7_VfggoXtl34bHBO42fUT7FeB9A5od6qGqLxQElbQuEt_KgPDL2olHXd9fVk-yekJyVKG1qXgSbDFwpD9I6OZU_XITiqpoNgnJkPQ6vXdCtOgAaQI0cDYv_r-OW_sXA67xgSq15sJEHLA1D46aGcNwI8NUzf-Iu3uFVuNlN29mzFtc5yAorKepK7DJptnkc_m-usovhk9gwGcvgKqnSxFvsrc6BttiTbTd7vGoFeTbyTCfrHQT8zA_cZrkBWO2iwmIIOs"/>
-            </div>
-            <div class="relative group overflow-hidden rounded-lg">
-                <img alt="Artwork 4" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuCoV-tCOvNgXEGS54eTEJ2hcTXocjYxvfYc_h-ZIUr_HAP6cqDeDTkSVSP7_QN1I79IhEbhVBrmLmdH2hfnKodDgDnNStxvMO17uze6cOpbKignbczkD5pVhEX3P-pSQfxlufY9LF35rSJRQmlDq1pvOJ1XhV0PcnXmdTVdZcZusKZ1rhSnmLLZ0Kl0PIJW2GFjxZaBKO4LzRLo7hgHL8oniSbjvWQlE_zNemYfjgDIpOM2yZ6Pls0xvhAevrc-sjg8ivRKmAHc0"/>
-            </div>
-            <div class="relative group overflow-hidden rounded-lg">
-                <img alt="Artwork 5" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcpTxK_ETWMBGA4WpEBwrO7kCgQ2ZCyrxM1v99FbFOWVhAdOQ2vI7UZsEUZswR4XjjvPanvS-G2aDuldiBpUM5yi3Bwd7EIvCFAhpOqKR6YYQ1W7pddnzKRxR__tqI1h6jtelzqRE0gvfoZxFmRvKusvyQiYGL-J7KSPgi1Xjg1l_Vhd-epuTaYgdsYD9bQ18PLTZXYDbZO-lHq93pYzMXq_Uv1fdliyn5RZXU60tAa5Fj_nAcg_BrGtxh41covpiGWJemz9h0WBE"/>
-            </div>
-            <div class="relative group overflow-hidden rounded-lg">
-                <img alt="Artwork 6" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr1lsChcL1Y3w9Js1hGFuFki7tTWKv5bSVtaWmILPYHxI9SwN_Btrr1-bjQ1P2NNIZOaVghcABTlG_OUM0zaaz2RU5hy2QeUVNqgRuKkcmiLTQwi1LBee0skgG-An5oG2d0CKqAwJE4PGWp-BsrxbVIHFxBzm1HzvKIN1ajuxZFX_qNvX-XHWJWyVMj1FSNesNIoyi59RO4xQG56htdeohltQQvni45xQQQ0VcGu43B5k6Y-MtPb4F819QhPvnycNI4cOvEtJS2Sc"/>
-            </div>
+            <button id="nextPage" class="px-3 py-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 disabled:opacity-40">Próxima</button>
         </div>
+
+        <!-- Total -->
         <div class="mt-8 text-right text-gray-500 dark:text-gray-400">
-            <p>Total de imagens: <span class="font-bold text-gray-700 dark:text-gray-200">6</span></p>
+            <p>Total de imagens: <span id="totalCount" class="font-bold text-gray-700 dark:text-gray-200">0</span></p>
         </div>
+
     </main>
 </div>
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 <script>
-    // ====== COLOQUE SEUS VALORES ======
+    // ====== SEUS VALORES ======
     const SUPABASE_URL = "https://teiqgonxzpanpjdzxteb.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlaXFnb254enBhbnBqZHp4dGViIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjAzMzY3MzgsImV4cCI6MjA3NTkxMjczOH0.h2fW3ZCPuEy0O4q1e-B0L8pvKpDnUNSR9uNeSzuWji0";
-    // ===================================
-
     const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const BUCKET = 'gallery';
 
+    // ====== GARANTE SESSÃO ======
     (async () => {
       const { data: { user } } = await sb.auth.getUser();
       if (!user) {
-        // use caminho relativo para evitar problemas de subpasta em dev
-        window.location.replace("./"); // volta para /admin/index.html
+        window.location.replace("./"); // volta para login
         return;
       }
-      // daqui pra frente, página carregada normalmente (renderPanel, etc.)
     })();
 
-    // se tiver botão "Sair"
+    // ====== LOGOUT ======
     document.addEventListener("DOMContentLoaded", () => {
-      const btn = document.getElementById("logoutBtn");
-      if (btn) btn.addEventListener("click", async () => {
+      document.getElementById("logoutBtn")?.addEventListener("click", async () => {
         await sb.auth.signOut();
         window.location.replace("./");
       });
     });
 
-  const BUCKET = 'gallery';
+    // ====== UPLOAD ======
+    document.addEventListener('DOMContentLoaded', () => {
+      const addBtn = document.getElementById('addImagesBtn');
+      if (!addBtn) return;
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const addBtn = document.getElementById('addImagesBtn'); // prefira ID
-    if (!addBtn) return;
+      const fileInput = document.createElement('input');
+      fileInput.type = 'file';
+      fileInput.accept = 'image/*';
+      fileInput.multiple = true;
+      fileInput.style.display = 'none';
+      document.body.appendChild(fileInput);
 
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.accept = 'image/*';
-    fileInput.multiple = true;
-    fileInput.style.display = 'none';
-    document.body.appendChild(fileInput);
-
-    addBtn.addEventListener('click', () => fileInput.click());
-    fileInput.addEventListener('change', () => {
-      if (!fileInput.files?.length) return;
-      uploadImages(fileInput.files).catch(err => {
-        console.error(err);
-        alert('Falha no upload. Veja o console.');
-      }).finally(() => {
-        fileInput.value = '';
+      addBtn.addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', async () => {
+        if (!fileInput.files?.length) return;
+        try { await uploadImages(fileInput.files); }
+        catch (err) { console.error(err); alert('Falha no upload. Veja o console.'); }
+        finally { fileInput.value = ''; }
       });
     });
-  });
 
-  async function uploadImages(fileList) {
-    const files = Array.from(fileList);
+    async function uploadImages(fileList) {
+      const files = Array.from(fileList);
+      const maxMB = 20;
+      for (const f of files) {
+        if (!f.type.startsWith('image/')) { alert(`Arquivo inválido: ${f.name}`); return; }
+        if (f.size > maxMB * 1024 * 1024) { alert(`"${f.name}" excede ${maxMB}MB.`); return; }
+      }
 
-    // validação
-    const maxMB = 20;
-    for (const f of files) {
-      if (!f.type.startsWith('image/')) { alert(`Arquivo inválido: ${f.name}`); return; }
-      if (f.size > maxMB * 1024 * 1024) { alert(`"${f.name}" excede ${maxMB}MB.`); return; }
-    }
+      const { data: { user } } = await sb.auth.getUser();
+      if (!user) { window.location.replace('./'); return; }
 
-    const { data: { user } } = await sb.auth.getUser();
-    if (!user) { window.location.replace('./'); return; }
+      const results = { ok: 0, fail: [] };
 
-    const results = { ok: 0, fail: [] };
+      for (const file of files) {
+        const orig = file.name;
+        const dot = orig.lastIndexOf('.');
+        const base = dot > -1 ? orig.slice(0, dot) : orig;
+        const ext  = (dot > -1 ? orig.slice(dot + 1) : 'jpg').toLowerCase();
+        const safeBase = base.replace(/[^\w.-]+/g, '_').slice(0, 80);
 
-    for (const file of files) {
-      const orig = file.name;
-      const dot = orig.lastIndexOf('.');
-      const base = dot > -1 ? orig.slice(0, dot) : orig;
-      const ext  = (dot > -1 ? orig.slice(dot + 1) : 'jpg').toLowerCase();
-      const safeBase = base.replace(/[^\w.-]+/g, '_').slice(0, 80);
+        const makePath = () => {
+          const uid = (crypto.randomUUID && crypto.randomUUID()) || Math.random().toString(36).slice(2);
+          return `uploads/${Date.now()}-${uid}-${safeBase}.${ext}`;
+        };
 
-      const makePath = () => {
-        const uid = (crypto.randomUUID && crypto.randomUUID()) || Math.random().toString(36).slice(2);
-        return `uploads/${Date.now()}-${uid}-${safeBase}.${ext}`;
-      };
+        let path = makePath();
 
-      let path = makePath();
+        // 1) upload com retry se 409
+        let upErr, attempt = 0;
+        do {
+          const res = await sb.storage.from(BUCKET).upload(path, file, {
+            cacheControl: '3600',
+            upsert: false,
+            contentType: file.type || 'image/*'
+          });
+          upErr = res.error;
+          if (upErr && (upErr.statusCode === 409 || /exists|already/i.test(upErr.message || ''))) {
+            path = makePath();
+          } else break;
+        } while (++attempt < 2);
 
-      // 1) upload com retry se 409
-      let upErr, attempt = 0;
-      do {
-        const res = await sb.storage.from(BUCKET).upload(path, file, {
-          cacheControl: '3600',
-          upsert: false,
-          contentType: file.type || 'image/*'
-        });
-        upErr = res.error;
-        if (upErr && (upErr.statusCode === 409 || upErr.statusCode === '409' || /exists|already/i.test(upErr.message || ''))) {
-          path = makePath();
-        } else {
-          break;
+        if (upErr) {
+          console.error('Upload error', orig, upErr);
+          results.fail.push({ name: orig, reason: upErr.message || String(upErr) });
+          continue;
         }
-      } while (++attempt < 2);
 
-      if (upErr) {
-        console.error('Upload error', orig, upErr);
-        results.fail.push({ name: orig, reason: upErr.message || String(upErr) });
-        continue;
+        // 2) URL pública
+        const { data: pub } = sb.storage.from(BUCKET).getPublicUrl(path);
+        const publicUrl = pub.publicUrl;
+
+        // 3) insert no DB
+        const { error: insErr } = await sb.from('images').insert({
+          url: publicUrl,
+          storage_path: path,
+          title: orig,
+          order: Math.floor(Date.now() / 1000),
+          published: true
+        });
+        if (insErr) {
+          console.error('DB insert error', orig, insErr);
+          results.fail.push({ name: orig, reason: insErr.message || String(insErr) });
+          await sb.storage.from(BUCKET).remove([path]).catch(() => {});
+          continue;
+        }
+
+        results.ok += 1;
       }
 
-      // 2) URL pública
-      const { data: pub } = sb.storage.from(BUCKET).getPublicUrl(path);
-      const publicUrl = pub.publicUrl;
-
-      // 3) insert no DB
-      const { error: insErr } = await sb.from('images').insert({
-        url: publicUrl,
-        storage_path: path,
-        title: orig,
-        order: Math.floor(Date.now() / 1000),
-        published: true
-      });
-      if (insErr) {
-        console.error('DB insert error', orig, insErr);
-        results.fail.push({ name: orig, reason: insErr.message || String(insErr) });
-        // opcional: rollback no storage
-        await sb.storage.from(BUCKET).remove([path]).catch(() => {});
-        continue;
+      if (results.fail.length === 0) {
+        alert('Uploads concluídos!');
+      } else {
+        const msg = [
+          `Uploads concluídos com avisos.`,
+          `Sucesso: ${results.ok}`,
+          `Falhas: ${results.fail.length}`,
+          '',
+          ...results.fail.map(f => `- ${f.name}: ${f.reason}`)
+        ].join('\n');
+        alert(msg);
       }
 
-      results.ok += 1;
+      await loadGallery(); // refresca sem reload da página
     }
 
-    if (results.fail.length === 0) {
-      alert('Uploads concluídos!');
-    } else {
-      const msg = [
-        `Uploads concluídos com avisos.`,
-        `Sucesso: ${results.ok}`,
-        `Falhas: ${results.fail.length}`,
-        '',
-        ...results.fail.map(f => `- ${f.name}: ${f.reason}`)
-      ].join('\n');
-      alert(msg);
+    // ====== EXCLUIR ======
+    async function deleteImage(id) {
+      const { data: rec, error: selErr } = await sb.from('images').select('storage_path').eq('id', id).single();
+      if (selErr) { alert('Erro ao buscar registro.'); return; }
+
+      if (rec?.storage_path) {
+        await sb.storage.from(BUCKET).remove([rec.storage_path]).catch(() => {});
+      }
+
+      const { error: delErr } = await sb.from('images').delete().eq('id', id);
+      if (delErr) { alert('Erro ao excluir do DB.'); return; }
+
+      await loadGallery();
+    }  <!-- <<< AQUI fecha deleteImage corretamente -->
+
+    // ====== LISTAGEM (fora de deleteImage!) ======
+    let PAGE = 1;
+    const PAGE_SIZE = 18;
+    let TOTAL = 0;
+
+    function buildQuery() {
+      const from = (PAGE - 1) * PAGE_SIZE;
+      const to   = from + PAGE_SIZE - 1;
+
+      return sb
+        .schema('public')
+        .from('images')
+        .select('id,url,storage_path,title,order,published,created_at', { count: 'exact' })
+        .order('order', { ascending: false })
+        .order('created_at', { ascending: false })
+        .range(from, to);
     }
 
-    window.location.reload();
-  }
-
-  async function deleteImage(id) {
-    const { data: rec, error: selErr } = await sb.from('images').select('storage_path').eq('id', id).single();
-    if (selErr) { alert('Erro ao buscar registro.'); return; }
-
-    if (rec?.storage_path) {
-      await sb.storage.from(BUCKET).remove([rec.storage_path]).catch(() => {});
+    function skeletonCards(n = Math.min(PAGE_SIZE, 8)) {
+      return Array.from({ length: n }).map(() =>
+        `<div class="relative overflow-hidden rounded-lg border border-white/10 bg-white/5 animate-pulse aspect-square"></div>`
+      ).join('');
     }
 
-    const { error: delErr } = await sb.from('images').delete().eq('id', id);
-    if (delErr) { alert('Erro ao excluir do DB.'); return; }
+    function cardTemplate(img) {
+      const safeTitle = img.title || 'Sem título';
+      const badge = img.published
+        ? '<span class="text-[10px] px-2 py-1 rounded bg-green-600/80 text-white">Publicado</span>'
+        : '<span class="text-[10px] px-2 py-1 rounded bg-yellow-600/80 text-white">Rascunho</span>';
 
-    window.location.reload();
-  }
+      return `
+        <div class="group relative overflow-hidden rounded-lg border border-white/10 bg-white/5">
+          <img src="${img.url}" alt="${safeTitle}" class="w-full h-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105" loading="lazy"/>
+          <div class="absolute inset-x-0 top-0 p-2 flex items-center justify-between bg-gradient-to-b from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition">
+            <span class="text-xs font-medium text-white truncate">${safeTitle}</span>
+            ${badge}
+          </div>
+          <div class="absolute inset-x-0 bottom-0 p-2 flex items-center gap-2 justify-end bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition">
+            <button data-action="toggle-publish" data-id="${img.id}" class="px-2 py-1 rounded bg-white/90 text-black text-xs hover:bg-white">
+              ${img.published ? 'Despublicar' : 'Publicar'}
+            </button>
+            <button data-action="delete" data-id="${img.id}" class="px-2 py-1 rounded bg-red-600 text-white text-xs hover:bg-red-700">
+              Excluir
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    async function loadGallery() {
+      const grid = document.getElementById('galleryGrid');
+      const totalEl = document.getElementById('totalCount');
+      const pageNum = document.getElementById('pageNum');
+      if (!grid) { console.error('grid não encontrado'); return; }
+
+      grid.innerHTML = skeletonCards();
+
+      const { data, count, error } = await buildQuery();
+      console.log('[images] =>', { error, count, got: data?.length, first: data?.[0] });
+
+      if (error) {
+        grid.innerHTML = `<div class="text-sm text-red-500">Falha ao carregar imagens.</div>`;
+        return;
+      }
+
+      TOTAL = count ?? 0;
+      if (totalEl) totalEl.textContent = String(TOTAL);
+      if (pageNum) pageNum.textContent = String(PAGE);
+
+      if (!data || data.length === 0) {
+        grid.innerHTML = `<div class="text-sm text-gray-500 dark:text-gray-400">Nenhuma imagem encontrada.</div>`;
+        return;
+      }
+
+      grid.innerHTML = data.map(cardTemplate).join('');
+    }
+
+    // AÇÕES (delegação)
+    document.addEventListener('click', async (ev) => {
+      const btn = ev.target.closest('button');
+      if (!btn) return;
+      const action = btn.getAttribute('data-action');
+      const id = btn.getAttribute('data-id');
+      if (!action || !id) return;
+
+      if (action === 'delete') {
+        if (!confirm('Tem certeza que deseja excluir esta imagem?')) return;
+        await deleteImage(id);
+        return;
+      }
+
+      if (action === 'toggle-publish') {
+        const { data: cur, error: e1 } = await sb.from('images').select('published').eq('id', id).single();
+        if (e1) { alert('Erro ao ler status.'); return; }
+        const { error: e2 } = await sb.from('images').update({ published: !cur.published }).eq('id', id);
+        if (e2) { alert('Erro ao atualizar status.'); return; }
+        await loadGallery();
+      }
+    });
+
+    // Paginação
+    document.getElementById('prevPage')?.addEventListener('click', () => {
+      if (PAGE > 1) { PAGE -= 1; loadGallery(); }
+    });
+    document.getElementById('nextPage')?.addEventListener('click', () => {
+      const maxPage = Math.max(1, Math.ceil(TOTAL / 18));
+      if (PAGE < maxPage) { PAGE += 1; loadGallery(); }
+    });
+
+    // Realtime (opcional)
+    (function setupRealtime() {
+      try {
+        sb
+          .channel('images-realtime')
+          .on('postgres_changes', { event: '*', schema: 'public', table: 'images' }, () => loadGallery())
+          .subscribe();
+      } catch {}
+    })();
+
+    // Boot
+    document.addEventListener('DOMContentLoaded', loadGallery);
 </script>
 </body>
 </html>
